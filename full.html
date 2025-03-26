@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> -->
+    <title>Wedding Invitation - Vijay weds Bhawana</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+   <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="invitation-card">
+        <div class="card-content">
+            <div class="ganesh-container">
+                <img src="ganesha.png" alt="Lord Ganesh" class="ganesh-img" id="ganesh-img">
+            </div>
+            
+            <h1 class="title">Wedding Invitation</h1>
+            
+            <div class="couple-names">Vijay weds Bhawana</div>
+            <div class="wedding-date">Friday, 9 May 2025</div>
+            
+            <div class="to-section">
+                <span class="to-label">To:</span>
+                
+                <h2><span id="name"></span></h2>
+                <div class="to-line" id="recipient-line"></div>
+
+                <script>
+                    const params = new URLSearchParams(window.location.search);
+                    document.getElementById('name').textContent = params.get('name') || 'Guest';
+                </script>
+            </div>
+            
+            <div class="baraat-container">
+                <img src="barat.png" alt="Wedding Procession" class="baraat-img" id="baraat-img">
+            </div>
+            
+            <div class="footer">
+                A warm-hearted <span class="heart">❤</span> invitation from,
+                <div class="contact-info">
+                    <strong>Sh. Surender Singh</strong><br>
+                    Gujargari, Almora, Uttarakhand - 263646<br>
+                    Mob.: 9599803561, 9811177358, 9720773145
+                </div>
+            </div>
+        </div>
+       
+            <!-- Ganesh Image -->
+            <div class="ganesh-container">
+                <img src="ganesha1.png" alt="Lord Ganesh" class="ganesh-img">
+            </div>
+            
+            <!-- Sanskrit Text -->
+            <div class="sanskrit-text">
+                वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ<br>
+                निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा
+            </div>
+            
+            <!-- Swastika and Mangalik Text -->
+            <div class="swastika-container">
+                <div class="swastika">
+                    <img src="swastic.png" alt="Swastika Symbol">
+                </div>
+                <div class="mangalik-text">मांगलिक कार्यक्रम</div>
+                <div class="swastika">
+                    <img src="swastic.png" alt="Swastika Symbol">
+                </div>
+            </div>
+            
+            <!-- First Day Date -->
+            <div class="date">गुरुवार, 8 मई 2025</div>
+            
+            <!-- Schedule -->
+            <div class="schedule">
+                <div class="schedule-item">
+                    <div class="event-name">हल्दी</div>
+                    <div class="event-time">प्रातः 08:00 बजे</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="event-name">मंगल स्नान, गणेश पूजन गृह स्नान</div>
+                    <div class="event-time">प्रातः 09:00 बजे</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="event-name">सुआला पथाई</div>
+                    <div class="event-time">प्रातः 10:00 बजे</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="event-name">प्रीतिभोज</div>
+                    <div class="event-time">दोपहर 01:00 बजे</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="event-name">महिला संगीत कार्यक्रम</div>
+                    <div class="event-time">दोपहर 03:00 बजे</div>
+                </div>
+            </div>
+            
+            <!-- Wedding Date -->
+            <div class="wedding-date">शुक्रवार, 9 मई 2025</div>
+            
+            <!-- Baraat -->
+            <div class="baraat">
+                <div class="event-name">बारात प्रस्थान</div>
+                <div class="event-time">प्रातः 09:00 बजे</div>
+            </div>
+            
+            <!-- Footer Images -->
+            <div class="footer-images">
+                <div class="kalash-container">
+                    <img src="kalash.png" alt="Kalash" class="kalash-img">
+                </div>
+                <div class="baraat-container">
+                    <img src="doli.png" alt="Baraat Procession" class="baraat-img">
+                </div>
+                <div class="kalash-container">
+                    <img src="kalash.png" alt="Kalash" class="kalash-img">
+                </div>
+            </div>
+            <br><br>
+            <h2>"Join us for a day full of love, laughter, and happily ever after ❤️"</h2>
+    
+        
+    </div>
+
+    <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
+    <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            // Add animation to the recipient line when clicked
+            const recipientLine = document.getElementById('recipient-line');
+            
+            recipientLine.addEventListener('click', function() {
+                const name = prompt('Enter recipient name:');
+                if (name) {
+                    // Create a text element above the line
+                    const nameElement = document.createElement('div');
+                    nameElement.textContent = name;
+                    nameElement.style.textAlign = 'center';
+                    nameElement.style.marginTop = '-20px';
+                    
+                    // Insert the name before the line
+                    this.parentNode.insertBefore(nameElement, this);
+                }
+            });
+            
+            // Note: In a real implementation, you would use separate image URLs
+            // const ganeshImg = document.getElementById('ganesh-img');
+            // ganeshImg.src = 'path/to/ganesh-image.jpg';
+            
+            // const baraatImg = document.getElementById('baraat-img');
+            // baraatImg.src = 'path/to/baraat-image.jpg';
+        });
+        function downloadPDF() {
+            // Get the specific element to convert to PDF
+            const element = document.getElementById('invitation-card');
+            
+            // PDF options
+            const options = {
+                margin: 10,
+                filename: 'Wedding_Invitation_Vijay_Bhawana.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    scrollY: 0, // Prevent scroll issues
+                    useCORS: true // Allow cross-origin images
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            };
+
+            // Generate and save PDF
+            html2pdf().set(options).from(element).save();
+        }
+    </script>
+    
+</body>
+
+    
+
+</html>
