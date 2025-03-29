@@ -265,7 +265,30 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
-    animation: fadeIn 1s ease-out 0.7s; /* Added fade-in animation with delay */
+    animation: fadeIn 1s ease-out 0.7s, jump 1.5s ease-in-out infinite alternate;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Jumping animation */
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .wedding-date {
@@ -282,6 +305,22 @@ body {
     margin-bottom: 20px;
     padding: 0 10px;
     animation: slideInFromLeft 1s ease-out; /* Added slide-in animation */
+}
+.to-section h2 {
+    color: rgb(255, 228, 73);
+    white-space: nowrap; /* Prevents text from breaking into multiple lines */
+    animation: moveLeft 10s linear infinite;
+    position: relative; /* Ensures it stays within the section */
+}
+
+/* Right-to-left moving animation */
+@keyframes moveLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .to-label {
