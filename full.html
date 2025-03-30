@@ -36,15 +36,150 @@
             <div class="baraat-container">
                 <img src="barat.png" alt="Wedding Procession" class="baraat-img" id="baraat-img">
             </div>
-            
-            <div class="footer">
-                A warm-hearted <span class="heart">❤</span> invitation from,
-                <div class="contact-info">
-                    <strong>Sh. Surender Singh</strong><br>
-                    Gujargari, Almora, Uttarakhand - 263646<br>
-                    Mob.: 9599803561, 9811177358, 9720773145
+
+            <div class="invitation-card" id="invitation-card">
+                <!-- Header with Ganesh images -->
+                <div class="header">
+                    <div class="ganesh-container">
+                        <div class="ganesh-text">श्री गणेशाय नमः</div>
+                        <img src="ganesh3.jpg" alt="Lord Ganesh" class="ganesh-img">
+                    </div>
+                    
+                    <div class="invocation">
+                        विघ्न हरण मंगल करण,श्री गणपति महाराज,<br>
+                        प्रथम निमंत्रण आपको, मेरे पूरण करिये काज।
+                    </div>
+                    
+                    <!-- <div class="ganesh-container">
+                        <div class="ganesh-text">श्री गणेशाय नमः</div>
+                        <img src="ganesh3.jpg" alt="Lord Ganesh" class="ganesh-img">
+                    </div> -->
+                </div>
+                
+                <!-- Addressee -->
+                <div class="addressee">
+                    मान्यवर,<br>
+                    परमपिता परमेश्वर एवं पित्रो के आशीर्वाद से श्रीमती <br>
+                    देवकी देवी धर्मपत्नी स्व: श्री उमेद सिंह बसनाल<br>
+                    अपने सुपौत्र
+                </div>
+                
+                <!-- Couple Section -->
+                <div class="couple-section">
+                    <div class="groom-side">
+                        <div class="couple-name">चि. विजय 👦🏻</div>
+                        <div class="parents">
+                            सुपुत्र श्रीमती हंसी देवी एवं <br>
+                            श्री सुरेंद्र सिंह
+                        </div>
+                        <div class="address">
+                            निवासी: ग्राम - गुजरगरी,<br>
+                            पोस्ट - घट्टी (भतरौंजखान)<br>
+                            जिला-अल्मोड़ा,<br>
+                            उत्तराखंड- 263646
+                        </div>
+                    </div>
+                    
+                    <div class="decoration"> परिणय </div>
+                    
+                    <div class="bride-side">
+                        <div class="couple-name">आयु. भावना 👩🏻</div>
+                        <div class="parents">
+                            सुपुत्री श्रीमती हीरा देवी एवं<br>
+                            श्री कृपाल सिंह रावत
+                        </div>
+                        <div class="address">
+                            निवासी: ग्राम - निगराली,<br>
+                            पोस्ट - भतरौंजखान<br>
+                            जिला-अल्मोड़ा,<br>
+                            उत्तराखंड-263646
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wedding Image -->
+                <div class="wedding-img-container">
+                    <img src="weds.jpg" alt="Wedding Couple" class="wedding-img">
+                </div>
+                
+                <!-- Ceremony Label -->
+                <div class="ceremony-label">के विवाहोत्सव</div>
+                
+                <!-- Invitation Text -->
+                <div class="invitation-text">
+                    की मंगल बेला पर अपने निवास स्थान पर अपने सदर अमंत्रित करते हैं। कृपया<br>
+                    कार्यक्रमानुशासन पधार कर वर - वधू को अपना स्नेह और आशीर्वाद प्रदान कर <br>
+                    हमें अनुगृहीत करें.
+                </div>
+                
+                <!-- Small Image -->
+                <div class="small-img">
+                    <img src="weds2.webp" alt="Decoration" class="small-img">
+                </div>
+                
+                <!-- Footer -->
+                <div class="footer">
+                    <div class="hosts">
+                        <div style="margin-bottom: 10px;">दर्शनाभिलाषी :</div>
+                        श्री अनुप सिंह बिष्ट, श्री जसवन्त सिंह बिष्ट,<br>
+                        श्री हरीश सिंह बिष्ट, श्री आनन्द सिंह बिष्ट,<br>
+                        श्री दीवान सिंह बिष्ट, श्री चन्दन सिंह बिष्ट,<br>
+                        श्री हेमन्त सिंह बिष्ट, गौरव, दीपांशु, हर्षित
+                    </div>
+                    
+                    <div class="contact">
+                        <div style="margin-bottom: 10px;">विनीतः</div>
+                        समस्त बसनाल परिवार एवं मित्रगण<br><br>
+                        मो0:9811177356 ,<br>
+                        9599893561<br>
+                        9027938948 , 8512803156<br>
+                        , 9411346872
+                    </div>
+                </div>
+                
+                <!-- Heart Logo -->
+                <div class="heart-logo">
+                    <img src="v+b.webp" alt="V B Logo">
                 </div>
             </div>
+        
+            
+            <script>
+                // Function to get URL parameters
+                function getUrlParameter(name) {
+                    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                    var results = regex.exec(location.search);
+                    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+                }
+                
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Check if there's a name parameter in the URL
+                    const recipientName = getUrlParameter('name');
+                    if (recipientName) {
+                        // If there's a name parameter, add it to the addressee section
+                        const addressee = document.querySelector('.addressee');
+                        addressee.innerHTML = `मान्यवर, <strong>${recipientName}</strong><br>` + addressee.innerHTML.split('<br>').slice(1).join('<br>');
+                    }
+                });
+                
+                function downloadPDF() {
+                    // Check if html2pdf is loaded
+                    if (typeof html2pdf === 'undefined') {
+                        // If not loaded, load the script
+                        const script = document.createElement('script');
+                        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+                        script.onload = generatePDF;
+                        document.head.appendChild(script);
+                    } else {
+                        generatePDF();
+                    }
+                }
+                
+                
+            </script>
+            
+           
         </div>
        
             <!-- Ganesh Image -->
@@ -118,6 +253,14 @@
                 </div>
             </div>
             <br><br>
+            <div class="footer">
+                A warm-hearted <span class="heart">❤</span> invitation from,
+                <div class="contact-info">
+                    <strong>Sh. Surender Singh</strong><br>
+                    Gujargari, Almora, Uttarakhand - 263646<br>
+                    Mob.: 9599803561, 9811177358, 9720773145
+                </div>
+            </div>
             <h2>"Join us for a day full of love, laughter, and happily ever after ❤️"</h2>
     
         
@@ -175,7 +318,7 @@
             html2pdf().set(options).from(element).save();
         }
     </script>
-<!--     <script>
+    <script>
         // Create Bubbles
         function createBubble() {
             const bubble = document.createElement("div");
@@ -249,7 +392,11 @@
         // Continuous Bubbles and Confetti
         setInterval(createBubble, 300);
         setInterval(createConfetti, 100);
-    </script> -->
+    </script>
+    
     
 </body>
+
+    
+
 </html>
