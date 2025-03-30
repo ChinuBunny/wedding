@@ -69,12 +69,17 @@ body {
     width: 80px;
     height: 80px;
     margin: 0 auto 15px;
-    background-color: white;
+    background-color:red;
     border-radius: 5px;
     padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.ganesh-text {
+    color: black;
+    font-size: x-large;
+    font-weight: 800;
 }
 
 .ganesh-img {
@@ -188,12 +193,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: float 3s ease-in-out infinite alternate;
 }
 
 .baraat-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Move up */
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* Media queries for responsive design */
@@ -544,3 +561,241 @@ body {
         transform: translateY(100vh) rotate(720deg);
     }
 }
+
+
+
+
+
+
+
+
+.invocation {
+    flex: 1;
+    padding: 0 15px;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.addressee {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.couple-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 30px 0;
+}
+
+.groom-side, .bride-side {
+    width: 45%;
+    text-align: center;
+}
+
+.couple-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: gold;
+    margin-bottom: 15px;
+}
+
+.parents {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.address {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.wedding-img-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+.wedding-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Move up */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.invitation-text {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.ceremony-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.hosts, .contact {
+    width: 48%;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.hosts {
+    text-align: left;
+}
+
+.contact {
+    text-align: right;
+}
+
+.heart-logo {
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.heart-logo img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.download-btn {
+    padding: 12px 24px;
+    background-color: #8a1f1f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:hover {
+    background-color: #6e1919;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.decoration {
+    font-size: 24px;
+    color: rgb(0, 255, 234);
+    margin: 0 10px;
+}
+
+.small-img {
+    width: 80px;
+    height: 80px;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-img img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .ganesh-container {
+        margin-bottom: 15px;
+    }
+    
+    .couple-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .groom-side, .bride-side {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hosts, .contact {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .download-btn {
+        display: none;
+    }
+    
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .invitation-card {
+        box-shadow: none;
+        margin: 0;
+        padding: 10px;
+    }
+}
+
+
