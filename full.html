@@ -159,7 +159,7 @@
                     if (recipientName) {
                         // If there's a name parameter, add it to the addressee section
                         const addressee = document.querySelector('.addressee');
-                        addressee.innerHTML = `मान्यवर, <strong>${recipientName}</strong><br>` + addressee.innerHTML.split('<br>').slice(1).join('<br>');
+                        addressee.innerHTML = `, <strong>${recipientName}</strong><br>` + addressee.innerHTML.split('<br>').slice(1).join('<br>');
                     }
                 });
                 
